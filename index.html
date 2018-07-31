@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Réservation de vélos à Lyon</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta name="description" content="Réservez des vélos dans les différentes stations velo'v à Lyon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/velo-favicon.png">
+</head>
+
+<body>
+    <header>
+        <h1>VELO'V : Réservation de vélos à Lyon</h1>
+    </header>
+
+    <!--  SLIDER -->
+    <div class="slider-container">
+        <div class="slider-wrapper">
+            <div class="inner-wrapper">
+                <div class="slide" id="image3">
+                    <div class="tuto-text">
+                        <p><strong>Etape 3 : </strong>finalisez la réservation en apposant votre signature dans le champ libre. Votre réservation expirera au bout de 20 minutes. Cliquez sur annuler pour annuler la réservation.</p>
+                    </div>
+                </div>
+                <div class="slide" id="image1">
+                    <div class="tuto-text">
+                        <p> <strong>Etape 1 : </strong>cliquez sur un des marqueurs pour voir le détail de la station et commencer votre réservation.</p>
+                    </div>
+                </div>
+                <div class="slide" id="image2">
+                    <div class="tuto-text">
+                        <p><strong>Etape 2 : </strong>les détails de la station s'afficheront. Cliquez sur réserver pour procéder à la réservation d'un vélo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="arrow prev icon-angle-left"></div>
+        <div class="arrow next icon-angle-right"></div>
+    </div>
+
+    <!--  CONTENEUR CARTE -->
+    <section id="map-container">
+        <!--  CARTE -->
+        <div id="map"></div>
+        <!--  INFOS -->
+        <aside>
+            <div class="infos-container">
+                <h2>Information Station</h2>
+                <div id="selectStation">
+                    <p>sélectionnez une station</p>
+                </div>
+                <div id="infosStation">
+                    <div id="status"></div>
+                    <h3>Vélo(s) disponible(s)</h3>
+                    <p id="availableBikes"></p>
+                    <h3>Place(s) disponible(s)</h3>
+                    <p id="availableBikeStands"></p>
+                    <h3>Lieu</h3>
+                    <p id="address"></p>
+                    <button type="button" class="book">Réserver</button>
+                </div>
+            </div>
+            <!--  CANVAS -->
+            <div class="canvas-container">
+                <h2>Signature</h2>
+                <canvas id="canvas" width="200" height="150"></canvas>
+                <div class="btn">
+                    <button type="button" class="btn-cancel">Annuler</button>
+                    <button type="button" class="btn-erase">Effacer</button>
+                    <a id="accept"><button type="button" class="btn-accept">Valider</button></a>
+                </div>
+
+            </div>
+        </aside>
+    </section>
+
+    <!-- DETAILS RESERVATION -->
+    <div id="booking-details">
+        <div class="confirm-message">
+            <strong>1 vélo réservé à la station : </strong><span></span>
+        </div>
+        <p id="timer">
+            <span class="min"></span><span class="sec"></span>
+        </p>
+        <button type="button" id="btn-cancel-booking">Annuler</button>
+    </div>
+
+    <footer>
+        <p>© 2018 | Projet 3 | Thami Sadouk</p>
+    </footer>
+
+    <!-- charge l'API google map - -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQo3o-O6MbJVBp-G-r7UcvweqTbbY70jI">
+    </script>
+    <script src="js/markerClusterer.js"></script>
+    <!-- on inclut jQuery via CDN -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="js/ajax.js"></script>
+    <script src="js/Slider.js"></script>
+    <script src="js/Map.js"></script>
+    <script src="js/Canvas.js"></script>
+    <script src="js/Reservation.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
